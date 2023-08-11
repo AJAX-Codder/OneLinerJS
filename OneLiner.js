@@ -51,3 +51,9 @@ var countNegatives = (grid) => grid.flat().sort().filter((n) => n < 0).length;
     Given a string s, return true if it is a palindrome, or false otherwise.
  */
 var isPalindrome = (s) => s.replace(/[^0-9a-zA-Z]/g, "").replaceAll(" ", "").toLowerCase() === s.replace(/[^0-9a-zA-Z]/g, "").replaceAll(" ", "").toLowerCase().split("").reverse().join("")
+
+/**
+    Given a string s consisting of words and spaces, return the length of the last word in the string.
+    A word is a maximal substring consisting of non-space characters only.
+ */
+const lengthOfLastWord = s => s.trim().split(" ").reverse()[0].length
