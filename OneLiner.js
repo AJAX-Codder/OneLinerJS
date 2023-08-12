@@ -52,8 +52,16 @@ var countNegatives = (grid) => grid.flat().sort().filter((n) => n < 0).length;
  */
 var isPalindrome = (s) => s.replace(/[^0-9a-zA-Z]/g, "").replaceAll(" ", "").toLowerCase() === s.replace(/[^0-9a-zA-Z]/g, "").replaceAll(" ", "").toLowerCase().split("").reverse().join("")
 
-/**
+/**[13].
     Given a string s consisting of words and spaces, return the length of the last word in the string.
     A word is a maximal substring consisting of non-space characters only.
  */
 const lengthOfLastWord = s => s.trim().split(" ").reverse()[0].length
+
+/*[14].
+    Given a 0-indexed string word and a character ch, reverse the segment of word that starts at index 0 and ends at the index of the first occurrence of ch (inclusive). If the character ch does not exist in word, do nothing.
+
+    For example, if word = "abcdefd" and ch = "d", then you should reverse the segment that starts at 0 and ends at 3 (inclusive). The resulting string will be "dcbaefd".
+    Return the resulting string.
+*/
+const reversePrefix = (word, ch) => word.indexOf(ch) == -1 ? word : word.substring(0, word.indexOf(ch) + 1).split("").reverse().join("") + word.substring(word.indexOf(ch) + 1)
